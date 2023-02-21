@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import ContactForm from '@/components/ContactForm'
 import ProjectCard from '../components/ProjectCard'
 
