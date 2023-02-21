@@ -1,0 +1,59 @@
+.form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   position: relative;
+}
+
+.form input,
+.form textarea {
+   background: rgb(255, 255, 255, 0.2);
+   border: 1px solid transparent;
+   border-radius: 5px;
+   padding: 0.5rem 1rem;
+   resize: none;
+   outline: none;
+}
+
+/* .form input:required,
+.form textarea:required {
+   border: 1px solid red;
+} */
+
+.form input:focus,
+.form textarea:focus {
+   border: 1px solid var(--accent-primary);
+}
+
+.form button {
+   background: linear-gradient(to bottom right, var(--accent-primary), var(--accent-secondary));
+   border: none;
+   color: white;
+   padding: 0.5rem;
+   width: 25%;
+   margin: 0 auto;
+   border-radius: 5px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.sending {
+   border-radius: 5px;
+   display: flex;
+   background: rgb(0, 0, 0, 0.3);
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   font-weight: bold;
+   font-size: 2rem;
+   color: white;
+}
+
+.sent_msg {
+   font-weight: bold;
+   background: -webkit-linear-gradient(right, var(--accent-primary), var(--accent-secondary));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
