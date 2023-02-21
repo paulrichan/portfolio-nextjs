@@ -26,7 +26,7 @@ html {
 }
 
 body {
-   padding-bottom: 5rem;
+   padding-bottom: 2rem;
    background: radial-gradient(circle, rgba(246, 246, 246, 1) 0%, rgba(181, 181, 181, 1) 100%);
 }
 
@@ -49,6 +49,30 @@ body {
    max-width: var(--max-width);
    margin: 0 auto;
    padding: 0 2rem;
+}
+
+hr {
+   border: 1px solid rgb(0, 0, 0, 0.1);
+   width: 90%;
+   margin: 20px auto;
+   border-radius: 100px;
+}
+
+footer {
+   text-align: center;
+}
+
+footer img {
+   margin-top: 10px;
+   width: 30px;
+}
+
+footer a {
+   opacity: 0.5;
+}
+
+footer a:hover {
+   opacity: 1;
 }
 
 nav {
@@ -91,7 +115,7 @@ nav {
 }
 
 .signature {
-   width: 50px;
+   width: 30px;
 }
 
 .hero {
@@ -286,6 +310,10 @@ nav {
 }
 
 @media (min-width: 768px) {
+   .signature {
+      width: 50px;
+   }
+
    .about-me {
       flex-direction: row;
       padding: 6rem 2rem;

@@ -40,13 +40,13 @@ function App() {
 
                <div>
                   <a className='nav-link' href='#about'>
-                     About Me
+                     About
                   </a>
                   <a className='nav-link' href='#projects'>
                      Projects
                   </a>
                   <a className='nav-link' href='#contact'>
-                     Contact Me
+                     Contact
                   </a>
                </div>
             </div>
@@ -104,6 +104,14 @@ function App() {
                <ContactForm />
             </div>
          </div>
+
+         <footer>
+            <hr />
+            <p>Created by Paul Richan</p>
+            <a href='https://github.com/paulrichan' target='_blank' rel='noreferrer'>
+               <img src='/GitHubLogo.svg' alt='' />
+            </a>
+         </footer>
       </div>
    )
 }
