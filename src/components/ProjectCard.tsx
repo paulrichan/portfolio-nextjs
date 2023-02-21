@@ -16,7 +16,7 @@ function ProjectCard(props: ProjectCardProps) {
    const tags = tagWords.map((tag) => <Tag key={tag} tagName={tag} />)
 
    return (
-      <a target='_blank' className={styles.card_link} href={link}>
+      <a target='_blank' rel='noreferrer' className={styles.card_link} href={link}>
          <div className={styles.card}>
             <img src={src} alt='proj img' />
 
