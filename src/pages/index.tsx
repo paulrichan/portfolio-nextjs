@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import ContactForm from '@/components/ContactForm'
+import { useState } from 'react'
 import ProjectCard from '../components/ProjectCard'
 
 function App() {
+   const [isNavOpen, setIsNavOpen] = useState(false)
    const projectCardInfo = [
       {
          tagWords: ['Next.js', 'React', 'TypeScript', 'REST', 'Tailwind', 'Figma', 'SWR'],
@@ -33,12 +35,18 @@ function App() {
    const projectCards = projectCardInfo.map((cardInfo, idx) => <ProjectCard key={idx} {...cardInfo} />)
 
    return (
-      <div className='App'>
+      <>
          <nav>
             <div className='nav-container'>
-               <img className='signature' src='/initials.png' alt='' />
+               <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                  <img className='signature' src='/initials.png' alt='' />
 
-               <div>
+                  <button className='hamburger' onClick={() => setIsNavOpen(!isNavOpen)}>
+                     <img src='/hamburger.svg' alt='' />
+                  </button>
+               </div>
+
+               <div className='nav-links'>
                   <a className='nav-link' href='#about'>
                      About
                   </a>
@@ -50,69 +58,90 @@ function App() {
                   </a>
                </div>
             </div>
+            <div
+               className='nav-menu-container'
+               style={{
+                  top: isNavOpen ? '100%' : '-400px',
+               }}
+            >
+               <div className='nav-menu'>
+                  <a href='#about' onClick={() => setIsNavOpen(false)}>
+                     About
+                  </a>
+                  <a href='#projects' onClick={() => setIsNavOpen(false)}>
+                     Projects
+                  </a>
+                  <a href='#contact' onClick={() => setIsNavOpen(false)}>
+                     Contact
+                  </a>
+               </div>
+            </div>
          </nav>
 
-         <div className='container'>
-            <div className='hero'>
-               <div className='cube1'></div>
-               <div className='cube2'></div>
-               <div className='cube3'></div>
+         <div className='App'>
+            <div className='container'>
+               <div className='hero'>
+                  <div className='cube1'></div>
+                  <div className='cube2'></div>
+                  <div className='cube3'></div>
 
-               <div className='name-container'>
-                  <h1 className='name'>Paul Richan</h1>
+                  <div className='name-container'>
+                     <h1 className='name'>Paul Richan</h1>
 
-                  <p>Full Stack Web Developer</p>
+                     <p>Full Stack Web Developer</p>
+                  </div>
                </div>
             </div>
-         </div>
 
-         <div className='container'>
-            <div id='about'>
-               <div className='section-header'>
-                  <h2 className='section-title'>About Me</h2>
-                  <div className='accent-underline' />
-               </div>
+            <div className='container'>
+               <div id='about'>
+                  <div className='section-header'>
+                     <h2 className='section-title'>About Me</h2>
+                     <div className='accent-underline' />
+                  </div>
 
-               <div className='about-me'>
-                  <img className='profile-img' src='/me.png' alt='me' />
+                  <div className='about-me'>
+                     <img className='profile-img' src='/me.png' alt='me' />
 
-                  <p>
-                     I attended the <span className='usd-underline'>University of San Diego</span> from 2015-2018,
-                     during my junior year I was drafted by the Chicago Cubs to play professional baseball. During my
-                     time as a professional athlete, I taught myself how to develop websites. I am now attending{' '}
-                     <span className='asu-underline'>Arizona State University</span> in pursuit of a degree in Graphic
-                     Information Technology (Full Stack Web Development) with an expected graduation year of 2024. I am
-                     currently seeking a position as a Full Stack Web Developer.
-                  </p>
+                     <p>
+                        I attended the <span className='usd-underline'>University of San Diego</span> from 2015-2018,
+                        during my junior year I was drafted by the Chicago Cubs to play professional baseball. During my
+                        time as a professional athlete, I taught myself how to develop websites. I am now attending{' '}
+                        <span className='asu-underline'>Arizona State University</span> in pursuit of a degree in
+                        Graphic Information Technology (Full Stack Web Development) with an expected graduation year of
+                        2024. I am currently seeking a position as a Full Stack Web Developer.
+                     </p>
+                  </div>
                </div>
             </div>
-         </div>
 
-         <div className='container'>
-            <div id='projects' className='projects'>
-               <div className='section-header'>
-                  <h2 className='section-title'>Projects</h2>
-                  <div className='accent-underline' />
+            <div className='container'>
+               <div id='projects' className='projects'>
+                  <div className='section-header'>
+                     <h2 className='section-title'>Projects</h2>
+                     <div className='accent-underline' />
+                  </div>
+
+                  <div className='card-container'>{projectCards}</div>
                </div>
-
-               <div className='card-container'>{projectCards}</div>
             </div>
-         </div>
 
-         <div className='container'>
-            <div id='contact' className='contact'>
-               <ContactForm />
+            <div className='container'>
+               <div id='contact' className='contact'>
+                  <div className='cube-contact' />
+                  <ContactForm />
+               </div>
             </div>
-         </div>
 
-         <footer>
-            <hr />
-            <p>Created by Paul Richan</p>
-            <a href='https://github.com/paulrichan' target='_blank' rel='noreferrer'>
-               <img src='/GitHubLogo.svg' alt='' />
-            </a>
-         </footer>
-      </div>
+            <footer>
+               <hr />
+               <p>Created by Paul Richan</p>
+               <a href='https://github.com/paulrichan' target='_blank' rel='noreferrer'>
+                  <img src='/GitHubLogo.svg' alt='' />
+               </a>
+            </footer>
+         </div>
+      </>
    )
 }
 

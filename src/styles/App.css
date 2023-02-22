@@ -49,6 +49,7 @@ body {
    max-width: var(--max-width);
    margin: 0 auto;
    padding: 0 2rem;
+   overflow: clip;
 }
 
 hr {
@@ -77,7 +78,7 @@ footer a:hover {
 
 nav {
    position: sticky;
-   display: flex;
+   /* display: flex; */
 
    top: 0;
    width: 100%;
@@ -86,19 +87,77 @@ nav {
    padding: 0.5rem;
 
    --webkit-backdrop-filter: blur(20px);
-   backdrop-filter: blur(10px);
+   backdrop-filter: blur(20px);
 
    z-index: 100;
 }
 
-.nav-container {
+.hamburger {
+   background: -webkit-linear-gradient(right, var(--accent-primary), var(--accent-secondary));
+   border-radius: 5px;
+   border: none;
+   width: 35px;
+   height: 35px;
+}
+
+/* .hamburger img {
+   color: white;
+} */
+
+.nav-menu-container {
+   width: 100%;
+   left: 0;
+   position: absolute;
+   top: 0px;
+   /* padding-top: 12%; */
+   z-index: 99;
+   background-color: rgb(231, 231, 231, 0.6);
+   --webkit-backdrop-filter: blur(20px);
+   backdrop-filter: blur(20px);
+   transition: all 0.3s cubic-bezier(0.34, -0.54, 0.54, 0.95);
+}
+
+.nav-menu {
+   position: absolute;
+   width: 100%;
    display: flex;
+   flex-direction: column;
+   gap: 3rem;
+   align-items: flex-end;
+   justify-content: center;
+   padding: 2rem;
+   overflow: clip;
+   z-index: 99;
+   background-color: rgb(231, 231, 231, 0.6);
+   --webkit-backdrop-filter: blur(20px);
+   backdrop-filter: blur(20px);
+}
+
+.nav-menu a {
+   text-decoration: none;
+   font-size: 2rem;
+   font-weight: bold;
+   background: -webkit-linear-gradient(right, var(--accent-primary), var(--accent-secondary));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.nav-container {
+   position: relative;
+   display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content: space-between;
    width: 100%;
+   /* height: fit-content; */
 
    max-width: var(--max-width);
    margin: 0 auto;
+   z-index: 100;
+}
+
+.nav-links {
+   display: none;
 }
 
 .nav-link {
@@ -130,8 +189,8 @@ nav {
 
 .cube1 {
    position: absolute;
-   bottom: 0;
-   right: 0;
+   bottom: 100px;
+   right: -75px;
    width: 250px;
    height: 250px;
    border-radius: 20px;
@@ -143,8 +202,8 @@ nav {
 
 .cube2 {
    position: absolute;
-   bottom: 0;
-   right: 0;
+   bottom: 100px;
+   right: -75px;
    width: 155px;
    height: 155px;
    border-radius: 20px;
@@ -156,8 +215,8 @@ nav {
 
 .cube3 {
    position: absolute;
-   top: 0;
-   left: 0;
+   top: -100px;
+   left: -75px;
    width: 200px;
    height: 200px;
    border-radius: 20px;
@@ -282,6 +341,20 @@ nav {
    scroll-margin: 80px;
 }
 
+.cube-contact {
+   position: absolute;
+   top: 75px;
+   right: -50px;
+   width: 250px;
+   height: 250px;
+   border-radius: 20px;
+   background: var(--primary-bg);
+   animation-name: cube-neu;
+   animation-duration: 22s;
+   animation-iteration-count: infinite;
+   opacity: 0.5;
+}
+
 .card-container {
    display: flex;
    flex-direction: column;
@@ -299,6 +372,7 @@ nav {
 .contact {
    max-width: 75%;
    margin: 0 auto;
+   position: relative;
 }
 
 .contact h1 {
@@ -311,7 +385,11 @@ nav {
 
 @media (min-width: 768px) {
    .signature {
-      width: 50px;
+      width: 40px;
+   }
+
+   .nav-links {
+      display: block;
    }
 
    .about-me {
@@ -323,22 +401,46 @@ nav {
       width: 60%;
    }
 
+   .nav-container {
+      flex-direction: row;
+   }
+
+   .hamburger {
+      display: none;
+   }
+
+   .nav-menu {
+      display: none;
+   }
+
    .nav-link + .nav-link {
       margin-left: 20px;
    }
 
+   .container {
+      overflow: visible;
+   }
+
    .cube1 {
+      right: 0;
       width: 500px;
       height: 500px;
    }
 
    .cube2 {
+      right: 0;
       width: 310px;
       height: 310px;
    }
 
    .cube3 {
+      left: 0;
       height: 400px;
       width: 400px;
+   }
+
+   .cube-contact {
+      top: 0;
+      opacity: 1;
    }
 }

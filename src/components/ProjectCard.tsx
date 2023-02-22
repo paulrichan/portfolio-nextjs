@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import styles from '../styles/ProjectCard.module.css'
 import Tag from './Tag'
 
@@ -19,7 +20,9 @@ function ProjectCard(props: ProjectCardProps) {
    return (
       <a target='_blank' rel='noreferrer' className={styles.card_link} href={link}>
          <div className={styles.card}>
-            <img src={src} alt='proj img' />
+            <div className={styles.image_container}>
+               <Image src={src} fill alt='proj img' />
+            </div>
 
             <div className={styles.info_container}>
                <h3>{title}</h3>
