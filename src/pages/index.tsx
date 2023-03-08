@@ -7,6 +7,14 @@ function App() {
    const [isNavOpen, setIsNavOpen] = useState(false)
    const projectCardInfo = [
       {
+         tagWords: ['Next.js', 'React', 'TypeScript', 'Prisma', 'tRPC', 'Tailwind', 'PlanetScale', 'MySQL'],
+         title: 'Registered Behavior Technician Tracking Tool',
+         link: 'https://rbt-tracker.vercel.app/',
+         src: '/rbt-showcase.png',
+         desc: 'This is a web application that is built with Next.js, MySQL, tRPC, and Prisma. The front end uses a tailwind plugin called DaisyUI. The application is hosted on vercel and the MySQL database is hosted on PlanetScale. The main use of the application is for Registered Behavior Technicians to track their working hours in order to receive a certification to further advance their career. To test, you can go through the authentication flow like normal and input dummy information to reach the dashboard.',
+         visible: false,
+      },
+      {
          tagWords: ['Next.js', 'React', 'TypeScript', 'REST', 'Tailwind', 'Figma', 'SWR'],
          title: "Pepiti's Dashboard",
          link: 'https://pepiti.com/',
@@ -19,7 +27,7 @@ function App() {
          title: 'Real Estate Portfolio',
          link: 'https://re-portfolio-fake.vercel.app/',
          src: '/property-page.png',
-         desc: "Real Estate Portfolio is a proof of concept CMS CRUD application where real estate agents can upload information about their listings and give their clients a dashboard experience to view all their agent's personal listings. Other agents are also searchable, allowing people that are in the market to explore all of their options.",
+         desc: "Real Estate Portfolio is a proof of concept CMS CRUD application where real estate agents can upload information about their listings and give their clients a dashboard experience to view all their agent's personal listings. Other agents are also searchable, allowing people that are in the market to explore all of their options. This project is currently not hosted due to costs required to host it.",
          visible: true,
       },
       {
@@ -27,7 +35,7 @@ function App() {
          title: 'Kittr',
          link: 'https://kittr.gg/',
          src: '/kittr-home.png',
-         desc: 'Kittr is another active project that I provided some help on while I was under contract at In the Zone Development. It provides streamers, who play the popular video game - Call of Duty, a dashboard to upload the weapon kits that they use in game so their viewers can copy and see what they are using. I mostly contributed to front end development but it is where I learned a lot more about backend development.',
+         desc: 'Kittr is the first project that I provided some help on while I was under contract at In the Zone Development. It provides streamers, who play the popular video game - Call of Duty, a dashboard to upload the weapon kits that they use in game so their viewers can copy and see what they are using. I mostly contributed to front end development with features like the side scroller component on the home page, a dashboard tutorial for new users, and refactoring a lot of messy code.',
          visible: true,
       },
    ]

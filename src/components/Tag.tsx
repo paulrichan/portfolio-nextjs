@@ -34,6 +34,8 @@ function Tag(props: TagProps) {
             return generateStyle('rgb(45, 55, 72)')
          case 'tRPC':
             return generateStyle('rgb(37, 150, 190)')
+         case 'MySQL':
+            return generateStyle('rgb(68, 121, 161)')
 
          default:
             break
